@@ -4,13 +4,14 @@
   "description": "www.contractcae.com",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "npm run test"
+    "start": "gulp"
+    "test": "echo 'tests'"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rgruesbeck/contractcae.git"
   },
-  "author": "Andrei Starobin",
+  "author": "Andrei Starobin, Ron Gruesbeck",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rgruesbeck/contractcae/issues"
