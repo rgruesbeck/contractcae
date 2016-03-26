@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rgruesbeck/contractcae/issues"
   },
-  "homepage": "https://github.com/rgruesbeck/contractcae#readme"
+  "homepage": "https://github.com/rgruesbeck/contractcae#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
