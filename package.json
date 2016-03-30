@@ -4,8 +4,10 @@
   "description": "www.contractcae.com",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp"
-    "test": "echo 'tests'"
+    "start": "gulp",
+    "server": "livereloadx --static -p 3000 dist",
+    "test": "echo 'tests'",
+    "deploy": "gulp; aws s3 sync dist s3://contractcae.com --region us-west-2 --acl public-read"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,9 @@
   },
   "homepage": "https://github.com/rgruesbeck/contractcae#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.0.0",
+    "gulp-replace": "^0.5.4",
+    "gulp-uglify": "^1.5.3",
   }
 }
