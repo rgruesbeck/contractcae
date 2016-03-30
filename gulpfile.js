@@ -57,17 +57,24 @@ gulp.task('index', function() {
 //Watch
 gulp.task('watch', function() {
     gulp.watch(paths.index, ['index']);
-    gulp.watch(paths.js, ['js']);
-    gulp.watch(paths.lib, ['lib']);
-    gulp.watch('gulpfile.js', ['build']);
+    gulp.watch(paths.js, ['js', 'index']);
+    gulp.watch(paths.lib, ['lib', 'index']);
+    gulp.watch('gulpfile.js', ['compile']);
+});
+
+gulp.task('compile',
+    [
+	'js',
+	'lib',
+	'index'
+    ],
+    function() {
 });
 
 gulp.task('build',
     [
 	'clear',
-	'js',
-	'lib',
-	'index'
+	'compile'
     ],
     function() {
 });
