@@ -7,6 +7,7 @@
     "start": "gulp",
     "server": "livereloadx --static -p 3000 dist",
     "test": "echo 'tests'",
+    "setenv": "export AWS_DEFAULT_PROFILE=cae; aws s3api list-buckets",
     "deploy": "gulp build; aws s3 sync dist s3://contractcae.com --region us-west-2 --acl public-read"
   },
   "repository": {

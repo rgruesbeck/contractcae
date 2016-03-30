@@ -44,3 +44,5 @@ config
 # Editor Buffers
 *~
 *\#
+*.swp
+*.swo
