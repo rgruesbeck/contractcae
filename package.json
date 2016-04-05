@@ -23,6 +23,7 @@
     "gulp": "^3.9.1",
     "gulp-inject": "^4.0.0",
     "gulp-replace": "^0.5.4",
-    "gulp-uglify": "^1.5.3"
+    "gulp-uglify": "^1.5.3",
+    "s3-website": "git+https://github.com/rgruesbeck/s3-website.git"
   }
 }
