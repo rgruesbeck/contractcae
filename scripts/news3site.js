@@ -1,24 +1,32 @@
+var waterfall = require('async-waterfall');
 var s3site = require('s3-website');
 
-makesite(process.argv[2], process.argv[3]);
+var domain_name = process.argv[2];
 
-function makesite(domain_name, bucket_region) {
-    var site = {
+waterfall([
+    function(cb){
+      s3site({
 	domain: domain_name,
-	region: bucket_region,
+	region: 'us-west-2',
 	index: 'index.html',
-	error: '404.html'
-    };
-    var wwwsite = {
+	error: 'error.html'
+      }, function(err, website) {
+	  if (err) cb(err);
+	  console.log(website);
+	  cb(null, website); 
+      });
+    },
+    function(err, cb) {
+      s3site({
 	domain: 'www.' + domain_name,
-	region: bucket_region,
-	redirectall: bucket_region
-    };
-
-    [site, wwwsite].forEach(function(ws) {
-	s3site(ws, function(err, website) {
-	    if (err) throw err;
-	    console.log(website);
-	});
-    });
-}
+	region: 'us-west-2',
+	redirectall: domain_name
+      }, function(err, website) {
+	  if (err) cb(err);
+	  cb(null, website); 
+      });
+    }
+  ], function(err, result){
+    if (err) throw err;
+    console.log(result);
+});

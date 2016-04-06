@@ -25,8 +25,8 @@ listbuckets () {
 newbucket () {
     echo -n "Choose a bucket name > "
     read bucketname
-    aws s3 mb s3://$bucketname
-    #aws s3api create-bucket --bucket $bucketname --create-bucket-configuration LocationConstraint=us-west-2
+    #aws s3 mb s3://$bucketname
+    aws s3api create-bucket --bucket $bucketname --create-bucket-configuration LocationConstraint=us-west-2
 }
 
 syncbucket () {
