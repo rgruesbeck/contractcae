@@ -22,4 +22,5 @@ npm run deploy
 ## Todo
 deploy basic page and content
 add grid system
+create favicon
 build latex and markdown module with react
