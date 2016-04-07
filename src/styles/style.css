@@ -1,4 +1,27 @@
+header {
+    background-image: url("/images/graph_paper.png");
+    background-color: #e5eaec;
+    color: #61707D;
+    margin-bottom: 4em;
+}
+
+header .navbar {
+    background-image: url("/images/graph_paper.png");
+    background-color: #e5eaec;
+    color: #61707D;
+}
+
 footer {
-    background-image: url("/images/graphpaper.png");
-    height: 350px;
+    background-image: url("/images/graph_paper.png");
+    background-color: #e5eaec;
+    color: #61707D;
+    text-align: left;
+}
+
+footer h4 {
+    margin-top: 1.65em;
+}
+
+footer li {
+    list-style-type: none;
 }
