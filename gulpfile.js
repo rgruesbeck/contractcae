@@ -10,6 +10,7 @@ var del = require('del');
 var paths = {
     index: 'src/index.html',
     markup: 'src/*.html',
+    blog: 'src/blog/**/*',
     js: 'src/js/**/*.js',
     lib: 'src/lib/**/*.js',
     styles: 'src/styles/**/*.css',
@@ -94,6 +95,12 @@ gulp.task('markup', function() {
 	.pipe(gulp.dest('dist'));
 });
 
+//move blog posts
+gulp.task('blog', function() {
+    return gulp.src(paths.blog)
+	.pipe(gulp.dest('dist/blog'));
+});
+
 //Favicon
 gulp.task('favicon', function() {
     return gulp.src(paths.favicon)
@@ -105,6 +112,7 @@ gulp.task('watch', function() {
     gulp.watch(paths.js, ['js']);
     gulp.watch(paths.styles, ['styles']);
     gulp.watch(paths.images, ['images']);
+    gulp.watch(paths.blog, ['blog']);
     gulp.watch(paths.index, ['index']);
     gulp.watch(paths.markup, ['markup']);
 });
@@ -118,6 +126,7 @@ gulp.task('build',
 	'fonts',
 	'images',
 	'favicon',
+	'blog',
 	'markup',
 	'index'
     ],
