@@ -1,27 +1,47 @@
-header {
-    background-image: url("/images/graph_paper.png");
-    background-color: #e5eaec;
+body {
+    //background-color: #fafafa;
+    background-color: #ffffff;
     color: #61707D;
-    margin-bottom: 4em;
+}
+
+header {
+    color: #61707D;
+    margin-bottom: 6em;
 }
 
 header .navbar {
-    background-image: url("/images/graph_paper.png");
-    background-color: #e5eaec;
+    background-color: #fafafa;
+    color: #61707D;
+}
+
+header nav .navbar a {
+    color: #61707D;
+}
+
+header nav .navbar li a {
+    font-size: 3em;
     color: #61707D;
 }
 
 footer {
     background-image: url("/images/graph_paper.png");
-    background-color: #e5eaec;
+    background-color: #ffffff;
     color: #61707D;
     text-align: left;
+    padding-bottom: 1em;
+    margin-top: 1em;
 }
 
 footer h4 {
-    margin-top: 1.65em;
+   margin-top: 1.65em;
 }
 
-footer li {
+footer ul, footer li {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
+}
+
+.black {
+    color: black;
 }

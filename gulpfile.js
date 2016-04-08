@@ -12,6 +12,7 @@ var paths = {
     js: 'src/js/**/*.js',
     lib: 'src/lib/**/*.js',
     styles: 'src/styles/**/*.css',
+    font: 'src/font/**/*',
     images: 'src/images/**/*',
     favicon: 'src/favicon.png'
 };
@@ -50,6 +51,12 @@ gulp.task('styles', function(cb) {
     return gulp.src(paths.styles)
 	.pipe(gulpif(isproduction(), rev()))
 	.pipe(gulp.dest('dist/styles'));
+});
+
+//Copy fonts
+gulp.task('fonts', function(cb) {
+    return gulp.src(paths.font)
+	.pipe(gulp.dest('dist/font'));
 });
 
 //Copy images
@@ -92,6 +99,7 @@ gulp.task('build',
 	'js',
 	'lib',
 	'styles',
+	'fonts',
 	'images',
 	'favicon',
 	'index'
