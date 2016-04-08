@@ -9,6 +9,7 @@ var del = require('del');
 
 var paths = {
     index: 'src/index.html',
+    markup: 'src/*.html',
     js: 'src/js/**/*.js',
     lib: 'src/lib/**/*.js',
     styles: 'src/styles/**/*.css',
@@ -79,6 +80,20 @@ gulp.task('index', function() {
 	.pipe(gulp.dest('dist'));
 });
 
+//Minify and configure *.html
+gulp.task('markup', function() {
+    var target = gulp.src([paths.markup, '!./src/index.html']);
+    var sources = gulp.src(assetpaths, {read: false});
+
+    return target.pipe(inject(sources))
+        .pipe(replace('/dist', ''))
+	.pipe(gulpif(isproduction(), gulpminifyhtml({
+	  conditionals: true,
+	  spare: true
+	})))
+	.pipe(gulp.dest('dist'));
+});
+
 //Favicon
 gulp.task('favicon', function() {
     return gulp.src(paths.favicon)
@@ -91,6 +106,7 @@ gulp.task('watch', function() {
     gulp.watch(paths.styles, ['styles']);
     gulp.watch(paths.images, ['images']);
     gulp.watch(paths.index, ['index']);
+    gulp.watch(paths.markup, ['markup']);
 });
 
 gulp.task('build',
@@ -102,6 +118,7 @@ gulp.task('build',
 	'fonts',
 	'images',
 	'favicon',
+	'markup',
 	'index'
     ],
     function() {
