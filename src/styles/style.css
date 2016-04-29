@@ -4,6 +4,10 @@ body {
     color: #61707D;
 }
 
+a {
+    color: "#E55381"
+}
+
 header {
     color: #61707D;
     margin-bottom: 6em;
@@ -23,6 +27,16 @@ header nav .navbar li a {
     color: #61707D;
 }
 
+header nav .navbar a.nav-link {
+    color: #61707D;
+}
+
+header .navbar-brand.nav-link {
+    padding-top: 0;
+    color: #61707D;
+    font-weight: bold;
+}
+
 footer {
     background-image: url("/images/graph_paper.png");
     background-color: #ffffff;
@@ -34,12 +48,14 @@ footer {
 
 footer h4 {
    margin-top: 1.65em;
+   text-align: center;
 }
 
 footer ul, footer li {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    text-align: center;
 }
 
 .black {
