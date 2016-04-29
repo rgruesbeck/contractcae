@@ -3,6 +3,7 @@ var rev = require('gulp-rev');
 var gulpminifyhtml = require('gulp-minify-html');
 var gulpif = require('gulp-if');
 var inject = require('gulp-inject');
+var injectPartials = require('gulp-inject-partials');
 var uglify = require('gulp-uglify');
 var replace = require('gulp-replace');
 var del = require('del');
@@ -10,6 +11,7 @@ var del = require('del');
 var paths = {
     index: 'src/index.html',
     markup: 'src/*.html',
+    partials: 'src/partials/*.html',
     blog: 'src/blog/**/*',
     js: 'src/js/**/*.js',
     lib: 'src/lib/**/*.js',
@@ -73,6 +75,7 @@ gulp.task('index', function() {
     var sources = gulp.src(assetpaths, {read: false});
 
     return target.pipe(inject(sources))
+        .pipe(injectPartials())
         .pipe(replace('/dist', ''))
 	.pipe(gulpif(isproduction(), gulpminifyhtml({
 	  conditionals: true,
@@ -87,6 +90,7 @@ gulp.task('markup', function() {
     var sources = gulp.src(assetpaths, {read: false});
 
     return target.pipe(inject(sources))
+        .pipe(injectPartials())
         .pipe(replace('/dist', ''))
 	.pipe(gulpif(isproduction(), gulpminifyhtml({
 	  conditionals: true,
@@ -115,6 +119,7 @@ gulp.task('watch', function() {
     gulp.watch(paths.blog, ['blog']);
     gulp.watch(paths.index, ['index']);
     gulp.watch(paths.markup, ['markup']);
+    gulp.watch(paths.partials, ['index', 'markup']);
 });
 
 gulp.task('build',
