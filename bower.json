@@ -1,0 +1,21 @@
+{
+  "name": "contractcae",
+  "description": "www.contractcae.com",
+  "main": "gulpfile.js",
+  "authors": [
+    "Andrei Starobin",
+    "Ron Gruesbeck"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rgruesbeck/contractcae",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootswatch-scss": "^3.2.0"
+  }
+}

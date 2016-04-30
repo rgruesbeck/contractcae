@@ -1,6 +1,9 @@
+@import "../bower_components/bootswatch-scss/flatly/variables";
+@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/bootstrap";
+@import "../bower_components/bootswatch-scss/flatly/bootswatch";
+
 body {
-    //background-color: #fafafa;
-    background-color: #ffffff;
     color: #61707D;
 }
 

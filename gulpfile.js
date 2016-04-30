@@ -6,6 +6,8 @@ var inject = require('gulp-inject');
 var injectPartials = require('gulp-inject-partials');
 var uglify = require('gulp-uglify');
 var replace = require('gulp-replace');
+var sass = require('gulp-sass');
+var bower = require('gulp-bower');
 var del = require('del');
 
 var paths = {
@@ -15,7 +17,7 @@ var paths = {
     blog: 'src/blog/**/*',
     js: 'src/js/**/*.js',
     lib: 'src/lib/**/*.js',
-    styles: 'src/styles/**/*.css',
+    styles: 'src/styles/**/*',
     font: 'src/font/**/*',
     images: 'src/images/**/*',
     favicon: 'src/favicon.png'
@@ -50,9 +52,16 @@ gulp.task('lib', function() {
 	.pipe(gulp.dest('dist/lib'));
 });
 
+//Copy Bower Components
+gulp.task('bower', function() {
+    return bower('src/bower_components')
+	.pipe(gulp.dest('dist/bower_components'));
+});
+
 //Copy styles
 gulp.task('styles', function(cb) {
     return gulp.src(paths.styles)
+        .pipe(sass().on('error', sass.logError))
 	.pipe(gulpif(isproduction(), rev()))
 	.pipe(gulp.dest('dist/styles'));
 });
@@ -125,6 +134,7 @@ gulp.task('watch', function() {
 gulp.task('build',
     [
 	'clear',
+	'bower',
 	'js',
 	'lib',
 	'styles',

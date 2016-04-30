@@ -23,12 +23,14 @@
     "async-waterfall": "^0.1.5",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
     "gulp-if": "^2.0.0",
     "gulp-inject": "^4.0.0",
     "gulp-inject-partials": "0.0.3",
     "gulp-minify-html": "^1.0.6",
     "gulp-replace": "^0.5.4",
     "gulp-rev": "^7.0.0",
+    "gulp-sass": "^2.3.1",
     "gulp-uglify": "^1.5.3",
     "s3-website": "git+https://github.com/rgruesbeck/s3-website.git"
   }
