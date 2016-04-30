@@ -35,6 +35,9 @@ node_modules
 # Dist directory
 dist
 
+# Bower
+src/bower_components
+
 # Temp directory
 tmp
 
