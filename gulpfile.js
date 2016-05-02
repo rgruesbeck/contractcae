@@ -17,7 +17,7 @@ var paths = {
     blog: 'src/blog/**/*',
     js: 'src/js/**/*.js',
     lib: 'src/lib/**/*.js',
-    styles: 'src/styles/**/*',
+    styles: ['src/styles/**/*.scss', 'src/styles/**/*.css'],
     font: 'src/font/**/*',
     images: 'src/images/**/*',
     favicon: 'src/favicon.png'
@@ -26,7 +26,7 @@ var paths = {
 var assetpaths = [
     'dist/js/**/*.js',
     'dist/lib/**/*.js',
-    'dist/styles/**/*.css'
+    'dist/styles/*.css'
 ];
 
 function isproduction() {
