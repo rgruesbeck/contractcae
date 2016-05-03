@@ -3,64 +3,64 @@
 @import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 @import "../bower_components/bootswatch-scss/readable/bootswatch";
 
-body {
-    color: #61707D;
-}
+//color pallet
+//https://coolors.co/app/3d5a80-fffcf2-98c1d9-993955-fcfcfc
 
-a {
-    color: "#E55381"
+$fg-color: #3D5A80;
+$bg-color: #FFFCF2;
+$nav-color: #FCFCFC;
+$link-color: #993955;
+$header-color: #98C1D9;
+
+body {
+    background-color: $bg-color;
+    color: $fg-color;
+    a {
+	color: $link-color;
+	&:hover {
+	    text-decoration: none;
+	}
+	span.gc-cs-link {
+	    color: $link-color;
+	}
+    }
+    h1, h2, h3 {
+      color: $header-color;
+    }
 }
 
 header {
-    color: #61707D;
-    margin-bottom: 6em;
-}
+    margin-bottom: 5em;
 
-header .navbar {
-    background-color: #fafafa;
-    color: #61707D;
-}
-
-header nav .navbar a {
-    color: #61707D;
-}
-
-header nav .navbar li a {
-    font-size: 3em;
-    color: #61707D;
-}
-
-header nav .navbar a.nav-link {
-    color: #61707D;
-}
-
-header .navbar-brand.nav-link {
-    padding-top: 0;
-    color: #61707D;
-    font-weight: bold;
+    #site-navbar {
+	background-color: $nav-color;
+	opacity: 0.95;
+	.navbar-brand {
+	  position: absolute;
+	  padding-top: 0.4em;
+	  h2 {
+	    margin: 0;
+	    position: relative;
+	    top: 0;
+	  }
+	}
+    }
 }
 
 footer {
-    background-image: url("/images/graph_paper.png");
-    background-color: #ffffff;
-    color: #61707D;
-    text-align: left;
-    padding-bottom: 1em;
-    margin-top: 1em;
-}
-
-footer h4 {
-   margin-top: 1.65em;
-   text-align: center;
-}
-
-footer ul, footer li {
+  background-image: url("/images/graph_paper.png");
+  background-color: $nav-color;
+  height: 100%;
+  opacity: 0.95;
+  text-align: left;
+  padding-bottom: 1em;
+  margin-top: 1em;
+  h4 {
+    margin-top: 1.65em;
+  }
+  ul, li {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    text-align: center;
-}
-
-.black {
-    color: black;
+  }
 }
